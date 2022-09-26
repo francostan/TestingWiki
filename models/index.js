@@ -6,6 +6,7 @@ var Page = db.define('page', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
+        
     },
     urlTitle: {
         type: Sequelize.STRING,
@@ -45,7 +46,9 @@ var Page = db.define('page', {
     renderedContent: {
         type: Sequelize.VIRTUAL,
         get () {
+            
             return marked(this.getDataValue('content'))
+            
         }
     }
 })

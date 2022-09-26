@@ -3,7 +3,7 @@ var Page = models.Page;
 var User = models.User;
 var app = require('./app');
 
-User.sync()
+User.sync({force: false})
     .then(function () {
         return Page.sync();
     })
